@@ -14,7 +14,8 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # SOCK_STREAM (default)
         # SOCK_DGRAM
         # SOCK_RAW
-host = socket.gethostbyname()
+host = '10.237.96.17'
+# host = socket.gethostbyname()
 port = 444
 
 serversocket.bind(host, port)
@@ -32,7 +33,7 @@ for i in range(10):
         # address: the address bound to the socket on the other end of connection.
     print("Receive data from %s" % str(address))
     message = "Thx for connecting\n"
-    clientsocket.send(message) # the argument should be bytes
+    clientsocket.send(message.encode('utf-8')) # the argument should be bytes
     clientsocket.close()
 
 
