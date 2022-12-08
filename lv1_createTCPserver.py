@@ -14,18 +14,18 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # SOCK_STREAM (default)
         # SOCK_DGRAM
         # SOCK_RAW
-host = '10.237.96.17'
+host = '192.168.43.47'
 # host = socket.gethostbyname()
 port = 444
 
-serversocket.bind(host, port)
+serversocket.bind((host, port))
 # .bind(addressss), bind addressss to the socket. 
 # The format of adressss depends on the address family when initializing socket
 # the socket must not already be bound
 
 serversocket.listen(3) # in parameter, specify how many connections we can listen to at a time
 
-for i in range(10):
+while True:
     clientsocket, address = serversocket.accept()
     # socket.accept(): Accept a connection. The socket must be bound and listening. 
     # return value is a pair (conn, address)
