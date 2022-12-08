@@ -32,7 +32,7 @@ while True:
         # conn: new socket object, usable to send and receive data on the connection.
         # address: the address bound to the socket on the other end of connection.
     print("Receive data from %s" % str(address))
-    message = "Thx for connecting\n"
+    message = "Thx for connecting. This message comes from the server.\n"
     clientsocket.send(message.encode('utf-8')) # the argument should be bytes
     clientsocket.close()
 
